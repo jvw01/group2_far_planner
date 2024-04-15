@@ -10,7 +10,7 @@ FAR Planner was used by the [CMU-OSU Team](https://www.subt-explorer.com) in att
 
 ## Usage
 
-The repository has been tested in Ubuntu 18.04 with ROS Melodic and Ubuntu 20.04 with ROS Noetic. Follow instructions in [Autonomous Exploration Development Environment](http://cmu-exploration.com) to setup the development environment. Make sure to checkout the branch that matches the computer setup, compile, and download the simulation environments.
+The repository has been tested in Ubuntu 22.04 with ROS Humble. Follow instructions in [Autonomous Exploration Development Environment](http://cmu-exploration.com) to setup the development environment. Make sure to checkout the branch that matches the computer setup, compile, and download the simulation environments.
 
 To setup FAR Planner, clone the repository.
 ```
