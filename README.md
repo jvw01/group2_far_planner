@@ -19,17 +19,17 @@ git clone https://github.com/MichaelFYang/far_planner
 In a terminal, go to the folder and compile.
 ```
 cd far_planner
-catkin_make
+colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release
 ```
 To run the code, go to the development environment folder in a terminal, source the ROS workspace, and launch.
 ```
-source devel/setup.sh
-roslaunch vehicle_simulator system_indoor.launch
+source install/setup.sh
+ros2 launch vehicle_simulator system_indoor.launch
 ```
 In another terminal, go to the FAR Planner folder, source the ROS workspace, and launch.
 ```
-source devel/setup.sh
-roslaunch far_planner far_planner.launch
+source install/setup.sh
+ros2 launch far_planner far_planner.launch
 ```
 Now, users can send a goal by pressing the 'Goalpoint' button in RVIZ and then clicking a point to set the goal. The vehicle will navigate to the goal and build a visibility graph (in cyan) along the way. Areas covered by the visibility graph become free space. When navigating in free space, the planner uses the built visibility graph, and when navigating in unknown space, the planner attempts to discover a way to the goal. By pressing the 'Reset Visibility Graph' button, the planner will reinitialize the visibility graph. By unchecking the 'Planning Attemptable' checkbox, the planner will first try to find a path through the free space. The path will show in green. If such a path does not exist, the planner will consider unknown space together. The path will show in blue. By unchecking the 'Update Visibility Graph' checkbox, the planner will stop updating the visibility graph. To read/save the visibility graph from/to a file, press the 'Read'/'Save' button. An example visibility graph file for indoor environment is available at 'src/far_planner/data/indoor.vgh'.
 
@@ -47,13 +47,13 @@ Anytime during the navigation, users can use the control panel to navigate the v
 
 To launch with a different environment, use the command lines below and replace '\<environment\>' with one of the environment names in the development environment, i.e. 'campus', 'indoor', 'garage', 'tunnel', and 'forest'. Note that when running in campus environment, set *checkTerrainConn* to true in system_campus.launch in the 'src/vehicle_simulator/launch' folder of the development environment.
 ```
-roslaunch vehicle_simulator system_<environment>.launch
-roslaunch far_planner far_planner.launch
+ros2 launch vehicle_simulator system_<environment>.launch
+ros2 launch far_planner far_planner.launch
 ```
 To run FAR Planner in a [Matterport3D](https://niessner.github.io/Matterport) environment, follow instructions on the development environment page to setup the Matterport3D environment. Then, use the command lines below to launch the system and FAR Planner.
 ```
-roslaunch vehicle_simulator system_matterport.launch
-roslaunch far_planner far_planner.launch config:=matterport
+ros2 launch vehicle_simulator system_matterport.launch
+ros2 launch far_planner far_planner.launch config:=matterport
 ```
 
 <p align="center">
@@ -62,7 +62,7 @@ roslaunch far_planner far_planner.launch config:=matterport
 
 Users have the option to define custom navigation boundaries. To do this, users need to supply a boundary file and a trajectory file. Examples are provided as 'boundary.ply' and 'trajectory.txt' in the 'src/far_planner/data' folder. The files can be viewed by text editors. Specifically, the boundary file contains user-defined polygons where each polygon has an index. The trajectory file contains poses where each pose is a row with x (m), y (m), z (m), roll (rad), pitch (rad), yaw (rad), and time duration from start of the run (second). The trajectory file is in the same format as those saved by the development environment and needs to contain at least one pose to determine the traversable side of the navigation boundaries. Users can use the command line below to generate a visibility graph file in the same folder (provided as 'boundary_graph.vgh'), which can be loaded to FAR Planner using the 'Read' button.
 ```
-roslaunch boundary_handler boundary_handler.launch
+ros2 launch boundary_handler boundary_handler.launch
 ```
 
 ## Configuration
