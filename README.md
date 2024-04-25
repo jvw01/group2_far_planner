@@ -16,9 +16,10 @@ To setup FAR Planner, clone the repository.
 ```
 git clone https://github.com/MichaelFYang/far_planner
 ```
-In a terminal, go to the folder and compile.
+In a terminal, go to the folder, checkout the 'humble' branch, and compile.
 ```
 cd far_planner
+git checkout humble
 colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release
 ```
 To run the code, go to the development environment folder in a terminal, source the ROS workspace, and launch.
