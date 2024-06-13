@@ -10,7 +10,7 @@ visualize_ratio                         : 0.75
 is_viewpoint_extend                     : true
 is_multi_layer                          : false
 is_opencv_visual                        : false # Obstalce Image Display
-is_static_env                           : true
+is_static_env                           : false
 is_pub_boundary                         : false
 is_debug_output                         : false
 is_attempt_autoswitch                   : true  # Auto switch to attemptable navigation
@@ -30,11 +30,11 @@ Util/angle_noise                        : 15.0 # Unit: degree
 Util/accept_max_align_angle             : 4.0  # Unit: degree
 Util/obs_inflate_size                   : 1
 Util/new_intensity_thred                : 2.0
-Util/terrain_free_Z                     : 0.2
+Util/terrain_free_Z                     : 0.4
 Util/dyosb_update_thred                 : 4
 Util/new_point_counter                  : 5
-Util/dynamic_obs_dacay_time             : 10.0 # Unit: second
-Util/new_points_decay_time              : 1.0  # Unit: second
+Util/dynamic_obs_dacay_time             : 2.0 # Unit: second
+Util/new_points_decay_time              : 0.2  # Unit: second
 
 # Dynamic Graph Params
 Graph/connect_votes_size                : 10
