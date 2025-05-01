@@ -126,6 +126,10 @@ void FARUtil::TransformPCLFrame(const std::string& from_frame_id,
                                 const std::string& to_frame_id,
                                 const std::shared_ptr<tf2_ros::Buffer>& tf_buffer,
                                 const PointCloudPtr& cloudInOut) {
+    // debug print
+    // RCLCPP_INFO_STREAM(nh_->get_logger(), "TransformPCLFrame: from_frame_id: " << from_frame_id
+    //                     << ", to_frame_id: " << to_frame_id);
+    printf("test 2  \n");
     if (cloudInOut->empty()) return;
 
     sensor_msgs::msg::PointCloud2 sensor_cloud;
@@ -136,6 +140,7 @@ void FARUtil::TransformPCLFrame(const std::string& from_frame_id,
         transformStamped = tf_buffer->lookupTransform(to_frame_id, from_frame_id,
                                                       tf2::TimePointZero);
     } catch (tf2::TransformException &ex) {
+        // RCLCPP_ERROR_STREAM(nh_->get_logger(), "Tracking PCL TF lookup: " << ex.what());
         throw ex;
     }
 
