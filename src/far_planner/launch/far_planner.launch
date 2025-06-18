@@ -10,14 +10,15 @@ import launch_ros
 
 def generate_launch_description():
     return LaunchDescription([
-        SetParameter(name='use_sim_time', value='false'),
+        DeclareLaunchArgument('use_sim_time', default_value='true'),
+        SetParameter(name='use_sim_time', value=LaunchConfiguration('use_sim_time')),
         DeclareLaunchArgument('config', default_value='default'),
 
         Node(
             package='far_planner',
             executable='far_planner',
             name='far_planner',
-            output='log',
+            output='screen',
             parameters=[
                 PythonExpression([
                 '"', 
