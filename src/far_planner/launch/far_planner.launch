@@ -10,8 +10,9 @@ import launch_ros
 
 def generate_launch_description():
     return LaunchDescription([
-        DeclareLaunchArgument('use_sim_time', default_value='true'),
-        SetParameter(name='use_sim_time', value=LaunchConfiguration('use_sim_time')),
+        # DeclareLaunchArgument('use_sim_time', default_value='true'),
+        # SetParameter(name='use_sim_time', value=LaunchConfiguration('use_sim_time')),
+        SetParameter(name='use_sim_time', value=False),
         DeclareLaunchArgument('config', default_value='default'),
 
         Node(
@@ -28,9 +29,9 @@ def generate_launch_description():
                 '.yaml"'])
             ],
             remappings=[
-                ('/odom_world', '/dlio/odom_node/odom'),
+                ('/odom_world', '/state_estimation'),
                 ('/terrain_cloud', '/terrain_map_ext'),
-                ('/scan_cloud', '/dlio/odom_node/pointcloud/deskewed'),
+                ('/scan_cloud', '/registered_scan'),
                 ('/terrain_local_cloud', '/terrain_map')
             ]
         ),
