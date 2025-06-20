@@ -183,7 +183,7 @@ private:
         if (!PreconditionCheck()) return;
         printf("\033[A"), printf("\033[A"), printf("\033[2K");
         if (is_graph_init_) {
-            std::cout<< "\033[1;32m V-Graph Initialized \033[0m\n" << std::endl;
+            std::cout<< "\033[1;32m V-Graph Initialized aaaa \033[0m\n" << std::endl;
             std::cout<<std::endl<<std::endl;
         } else {
             std::cout<< "\033[1;31m V-Graph Resetting...\033[0m\n" << std::endl;

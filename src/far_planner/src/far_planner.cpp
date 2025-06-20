@@ -265,7 +265,7 @@ void FARMaster::MainLoopCallBack() {
   if (!is_graph_init_ && !nav_graph_.empty()) {
     is_graph_init_ = true;
     printf("\033[A"), printf("\033[A"), printf("\033[2K");
-    std::cout<< "\033[1;32m V-Graph Initialized \033[0m\n" << std::endl;
+    std::cout<< "\033[1;32m V-Graph Initialized  bbbbbbbbbbb\033[0m\n" << std::endl;
   }
 
 }

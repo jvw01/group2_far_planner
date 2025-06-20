@@ -12,7 +12,7 @@ far_planner:
     is_viewpoint_extend: true
     is_multi_layer: false
     is_opencv_visual: false # Obstacle Image Display
-    is_static_env: true
+    is_static_env: false
     is_pub_boundary: false
     is_debug_output: false
     is_attempt_autoswitch: true  # Auto switch to attemptable navigation
@@ -22,7 +22,7 @@ far_planner:
     graph_msger/robot_id: 1  # graph from robot id "0" is extracted from files
 
     # Map Handler Params
-    map_handler/floor_height: 2.5     # Unit: meter
+    map_handler/floor_height: 2.0     # Unit: meter
     map_handler/cell_length: 5.0     # Unit: meter
     map_handler/map_grid_max_length: 1000.0   # Unit: meter
     map_handler/map_grad_max_height: 100.0   # Unit: meter
@@ -32,11 +32,11 @@ far_planner:
     util/accept_max_align_angle: 4.0  # Unit: degree
     util/obs_inflate_size: 1
     util/new_intensity_thred: 2.0
-    util/terrain_free_Z: 0.2
+    util/terrain_free_Z: 0.3
     util/dyosb_update_thred: 4
     util/new_point_counter: 5
-    util/dynamic_obs_dacay_time: 10.0 # Unit: second
-    util/new_points_decay_time: 1.0  # Unit: second
+    util/dynamic_obs_dacay_time: 2.0 # Unit: second
+    util/new_points_decay_time: 0.2  # Unit: second
 
     # Dynamic Graph Params
     graph/connect_votes_size: 10
