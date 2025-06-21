@@ -129,7 +129,7 @@ void FARUtil::TransformPCLFrame(const std::string& from_frame_id,
     // debug print
     // RCLCPP_INFO_STREAM(nh_->get_logger(), "TransformPCLFrame: from_frame_id: " << from_frame_id
     //                     << ", to_frame_id: " << to_frame_id);
-    printf("test 2  \n");
+    // printf("test 2  \n");
     if (cloudInOut->empty()) return;
 
     sensor_msgs::msg::PointCloud2 sensor_cloud;
