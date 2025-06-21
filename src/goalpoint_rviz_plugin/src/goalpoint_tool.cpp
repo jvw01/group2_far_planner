@@ -76,7 +76,7 @@ void GoalpointTool::onPoseSet(double x, double y, double theta)
 
   joy.header.stamp = clock_->now();
   joy.header.frame_id = "goalpoint_tool";
-  // pub_joy_->publish(joy);
+  pub_joy_->publish(joy);
 
   geometry_msgs::msg::PointStamped goalpoint;
   goalpoint.header.frame_id = "map";
